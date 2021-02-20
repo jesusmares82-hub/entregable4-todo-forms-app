@@ -5,10 +5,25 @@
   box-sizing: none;
 }
 
+/* Variables de color si el tema es nulo o light */
+html {
+  --quaternary-color: #faf3e0;
+  --terciary-color: -webkit-linear-gradient(to right, #89fcfc, #6ab6df);
+  --secondary-color: linear-gradient(to right, #b5caf0, #3a6cf7);
+  --primary-color: #282c34;
+}
+
+/* Variables de color si el tema es dark */
+html[data-theme="dark"] {
+  --primary-color: #fff;
+  --secondary-color: #282c34;
+  --terciary-color: transparent;
+  --quaternary-color: #ac8b6b;
+}
+
 body {
-  background: #efefbb;
-  background: -webkit-linear-gradient(to right, #89fcfc, #6ab6df);
-  background: linear-gradient(to right, #b5caf0, #3a6cf7);
+  /*background: #efefbb;*/
+  background: var(--secondary-color, --terciary-color);
 
   display: flex;
   align-items: center;
@@ -16,6 +31,7 @@ body {
   /*font-family: "Lato";*/
   font-family: "DotGothic16", sans-serif;
   margin: 0;
+  color: var(--primary-color);
 }
 
 .App {
@@ -26,7 +42,7 @@ body {
   width: 150px;
   align-items: center;
   justify-content: center;
-  background-color: #faf3e0;
+  background-color: var(--quaternary-color);
   margin: 10px;
   padding: 10px 10px;
   border-radius: 15px;

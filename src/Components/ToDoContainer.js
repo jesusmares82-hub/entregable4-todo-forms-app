@@ -39,26 +39,24 @@ const TodoContainer = () => {
   // Put Method
   useEffect(() => {
     if (idEdit) {
-      //console.log(idEdit);
-      console.log(isCompleted);
       axios({
         url: `https://todos-academlo.herokuapp.com/api/todo/${idEdit}`,
         data: isCompleted,
         method: "PUT",
-      }).then((res) => {
-        setTodos((prevState) =>
-          prevState.map((todo) => {
-            if (todo._id !== res.data._id) {
-              return todo;
+      }).then((response) => {
+        setTodos((miEstate) =>
+          miEstate.map((isCompleted) => {
+            if (isCompleted._id !== response.data._id) {
+              return isCompleted;
             }
 
             return {
-              ...res.data,
+              ...response.data,
             };
           })
         );
       });
-      //setIsCompleted(null);
+      setIsCompleted(null);
     }
   }, [idEdit, isCompleted]);
 
@@ -86,7 +84,6 @@ const TodoContainer = () => {
   };
 
   const handleEdit = (id, isCompleted) => {
-    console.log(isCompleted);
     if (isCompleted) {
       isCompleted = false;
     } else {
