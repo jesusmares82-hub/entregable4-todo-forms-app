@@ -12,7 +12,6 @@ const TodoContainer = () => {
   const [newTodo, setNewTodo] = useState(null);
   const [resetForm, setResetForm] = useState(false);
   const [isCompleted, setIsCompleted] = useState();
-  const [checked, setChecked] = useState(false);
 
   // Get Method
   useEffect(() => {
@@ -100,7 +99,6 @@ const TodoContainer = () => {
           <h2>
             <input
               type="checkbox"
-              defaultChecked={checked}
               onChange={() => handleEdit(value._id, value.isCompleted)}
             />
             {value.task}

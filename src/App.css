@@ -1,4 +1,3 @@
-/*@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");*/
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
 * {
@@ -22,13 +21,11 @@ html[data-theme="dark"] {
 }
 
 body {
-  /*background: #efefbb;*/
   background: var(--secondary-color, --terciary-color);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  /*font-family: "Lato";*/
   font-family: "DotGothic16", sans-serif;
   margin: 0;
   color: var(--primary-color);
