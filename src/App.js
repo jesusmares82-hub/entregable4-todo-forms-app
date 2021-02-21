@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <label>
-        Dark Mode:
+        <strong>Dark Mode:</strong>
         <input
           type="checkbox"
           defaultChecked={checked}
