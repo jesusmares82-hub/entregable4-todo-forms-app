@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <label>
-        Click para cambiar el tema:
+        Dark Mode:
         <input
           type="checkbox"
           defaultChecked={checked}
