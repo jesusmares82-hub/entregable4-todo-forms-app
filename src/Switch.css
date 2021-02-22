@@ -1,0 +1,29 @@
+.dark-mode {
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+.checkbox {
+  display: none;
+}
+
+.switch {
+  border: 1px solid red;
+  height: 20px;
+  display: block;
+  border-radius: 20px;
+  background: var(--switch);
+  width: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+}
+.switch::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: var(--switchSpinner);
+  border-radius: 50%;
+}
