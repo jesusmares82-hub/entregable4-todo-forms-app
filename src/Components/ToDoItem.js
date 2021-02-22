@@ -1,12 +1,19 @@
 import React from "react";
+import { FcFullTrash } from "react-icons/fc";
+import { FcCheckmark } from "react-icons/fc";
 
-const ToDoItem = ({ id, isCompleted, onEdit, onDelete }) => {
+const ToDoItem = ({ task, student, id, isCompleted, onEdit, onDelete }) => {
   return (
-    <>
-      <button onClick={() => onDelete(id)}>Delete</button>
-
-      <input type="checkbox" onChange={() => onEdit(id, isCompleted)} />
-    </>
+    <div className="card">
+      <h3>
+        <input type="checkbox" onChange={() => onEdit(id, isCompleted)} />{" "}
+        {task} {isCompleted ? <FcCheckmark /> : ""}
+      </h3>
+      <p> by {student} </p>
+      <button onClick={() => onDelete(id)}>
+        <FcFullTrash />
+      </button>
+    </div>
   );
 };
 

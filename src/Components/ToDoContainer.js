@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CreateTodo from "./CreateToDo";
-import { FcFullTrash } from "react-icons/fc";
-import { FcCheckmark } from "react-icons/fc";
+
+import ToDoItem from "./ToDoItem";
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState();
@@ -95,19 +95,15 @@ const TodoContainer = () => {
   useEffect(() => {
     if (todos) {
       const arrayToDos = todos.map((value) => (
-        <div className="card" key={value._id}>
-          <h3>
-            <input
-              type="checkbox"
-              onChange={() => handleEdit(value._id, value.isCompleted)}
-            />{" "}
-            {value.task} {value.isCompleted ? <FcCheckmark /> : ""}
-          </h3>
-          <p> by {value.student} </p>
-          <button onClick={() => handleDelete(value._id)}>
-            <FcFullTrash />
-          </button>
-        </div>
+        <ToDoItem
+          key={value._id}
+          onEdit={handleEdit}
+          id={value._id}
+          isCompleted={value.isCompleted}
+          task={value.task}
+          student={value.student}
+          onDelete={handleDelete}
+        />
       ));
       setAllTodos(arrayToDos);
     }
